@@ -12,7 +12,7 @@ const options = {
   root: path.join(__dirname, "views"),
 };
 
-app.get(["/", "/home"], (req, res) => res.sendFile("index.html", options));
+app.get("/{home}", (req, res) => res.sendFile("index.html", options));
 app.get("/about", (req, res) => res.sendFile("about.html", options));
 app.get("/contact", (req, res) => res.sendFile("contact.html", options));
 app.get("/{*splat}", (req, res) => res.sendFile("404.html", options));
